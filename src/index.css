@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700;900&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+:root {
+  /* Core Backgrounds */
+  --bg-void:        #05060a;
+  --bg-main:        #0a0b0f;
+  --bg-panel:       #10121a;
+  --bg-panel-hover: #161922;
+  --bg-rim:         #1c1f2b;
+
+  /* Gold System — Grace Light */
+  --gold-pure:      #c8a96e;
+  --gold-bright:    #e2c27a;
+  --gold-dim:       #7a6240;
+  --gold-glow:      rgba(200,169,110,0.15);
+  --gold-glow-strong: rgba(200,169,110,0.35);
+
+  /* Silver System — Moonlight */
+  --silver-pure:    #a8b8d0;
+  --silver-bright:  #d0dcea;
+  --silver-dim:     #4a5568;
+  --silver-glow:    rgba(168,184,208,0.12);
+
+  /* Text */
+  --text-hero:      #f0ece4;
+  --text-main:      #d4cfc8;
+  --text-muted:     #7a8090;
+  --text-faint:     #3a3f4a;
+
+  /* Accent Blood Red */
+  --blood:          #8b1a1a;
+  --blood-bright:   #c0392b;
+
+  /* Timing */
+  --t-slow:   2400ms;
+  --t-mid:    800ms;
+  --t-fast:   250ms;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-gothic:   cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Font references */
+  --font-display:  'Cinzel Decorative', serif;
+  --font-heading:  'Cinzel', serif;
+  --font-body:     'EB Garamond', serif;
+  --font-ui:       'Inter', sans-serif;
+}
+
+/* =============================================
+   BASE RESET & HTML
+   ============================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-void);
+  background-attachment: fixed;
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  cursor: none;
+}
+
+/* =============================================
+   TYPOGRAPHY HIERARCHY
+   ============================================= */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text-hero);
+  line-height: 1.25;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+}
+
+p {
+  font-family: var(--font-body);
+  color: var(--text-main);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--t-fast) var(--ease-gothic);
+}
+
+a:hover {
+  color: var(--gold-pure);
+}
+
+/* =============================================
+   VIGNETTE OVERLAY (Phase 1, Step 5)
+   ============================================= */
+.vignette {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 40%,
+    rgba(5,6,10,0.4) 70%,
+    rgba(5,6,10,0.85) 100%
+  );
+}
+
+/* =============================================
+   TEXT SELECTION
+   ============================================= */
+::selection {
+  background: rgba(200,169,110,0.3);
+  color: var(--text-hero);
+}
+
+/* =============================================
+   SCROLLBAR
+   ============================================= */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg-void); }
+::-webkit-scrollbar-thumb { background: var(--gold-dim); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-pure); }
+
+/* =============================================
+   FADE IN ENTRY
+   ============================================= */
+.fade-in {
+  animation: fadeIn 1.5s var(--ease-out-expo) forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================================
+   REDUCED MOTION (Phase 8)
+   ============================================= */
+@media (prefers-reduced-motion: reduce) {
+  .star, .ember-particle, .fog-band, .moon-ray, .moon-ray-sharp {
+    animation: none !important;
+  }
+  .reveal-fade-up, .reveal-glow-in, .reveal-slash-in {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    clip-path: none !important;
+  }
+}
