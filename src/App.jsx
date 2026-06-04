@@ -111,6 +111,34 @@ const projects = [
     features: ["Character writing", "Player agency", "Multiple outcomes", "Emotional conflict"],
     cta: "Read Dialogue",
     link: "https://pdfhost.io/v/DAU82SF3fz_Dialogue_Branching"
+  },
+  {
+    id: 5,
+    title: "Doctrine of Still Hands — Ancillary Samples",
+    tag: "Game Writing · Range Demonstration",
+    features: [
+      "Item descriptions & key items",
+      "Branching quest logs",
+      "In-world journal entries",
+      "Ability tooltips & codex entry",
+      "Loading screen tips",
+    ],
+    cta: "Read Full Document",
+    link: "https://pdfhost.io/v/cxrF3wCBe6_Doctrine_of_Still_Hands_Ancillary_Samples"
+  },
+  {
+    id: 6,
+    title: "What the Archive Forgot",
+    tag: "Concept Pitch · Quest Design",
+    features: [
+      "One-page pitch format",
+      "Unexpected moral angle",
+      "Three-path player choice",
+      "Character voice & sample dialogue",
+      "Tone references & design intent",
+    ],
+    cta: "Read Pitch Document",
+    link: "https://pdfhost.io/v/MpuBkmjGV2_Pitching_Doc"
   }
 ];
 
