@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shree Kamalesh - Quest Designer CV</title>
+    <style>
+        :root {
+            --color-primary: #111111;
+            --color-secondary: #444444;
+            --color-link: #0066cc;
+            --color-border: #dddddd;
+            --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --font-serif: Georgia, serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            color: var(--color-primary);
+            line-height: 1.4;
+            margin: 0;
+            padding: 40px;
+            background-color: #f7f7f7;
+        }
+
+        .cv-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 50px 60px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 4px;
+        }
+
+        header {
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: var(--font-serif);
+            font-size: 28px;
+            margin: 0 0 5px 0;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .title-sub {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--color-secondary);
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            font-size: 12.5px;
+            color: var(--color-secondary);
+        }
+
+        .contact-info a {
+            color: var(--color-primary);
+            text-decoration: none;
+            border-bottom: 1px dotted var(--color-secondary);
+        }
+
+        .contact-info a:hover {
+            color: var(--color-link);
+            border-bottom-style: solid;
+        }
+
+        .bullet-separator {
+            color: #ccc;
+        }
+
+        section {
+            margin-bottom: 22px;
+        }
+
+        h2 {
+            font-family: var(--font-serif);
+            font-size: 16px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid var(--color-border);
+            padding-bottom: 4px;
+            margin: 0 0 12px 0;
+            color: var(--color-primary);
+        }
+
+        .summary-text {
+            font-size: 13.5px;
+            color: #333333;
+            text-align: justify;
+            margin: 0;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .skills-category h3 {
+            font-size: 13px;
+            margin: 0 0 6px 0;
+            text-transform: uppercase;
+            color: var(--color-primary);
+            border-bottom: 1px dashed var(--color-border);
+            padding-bottom: 2px;
+        }
+
+        .skills-list {
+            font-size: 13px;
+            color: var(--color-secondary);
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .skills-list li {
+            margin-bottom: 3px;
+        }
+
+        .project-item, .exp-item {
+            margin-bottom: 14px;
+        }
+
+        .project-item:last-child, .exp-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .item-title {
+            font-size: 14px;
+            font-weight: bold;
+            color: var(--color-primary);
+        }
+
+        .item-title a {
+            color: var(--color-primary);
+            text-decoration: none;
+        }
+
+        .item-title a:hover {
+            color: var(--color-link);
+            text-decoration: underline;
+        }
+
+        .item-meta {
+            font-size: 12.5px;
+            color: var(--color-secondary);
+            font-style: italic;
+        }
+
+        .item-bullets {
+            font-size: 13px;
+            color: #333333;
+            margin: 0;
+            padding-left: 18px;
+        }
+
+        .item-bullets li {
+            margin-bottom: 3px;
+        }
+
+        .edu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+
+        .edu-name {
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .edu-meta {
+            font-size: 13px;
+            color: var(--color-secondary);
+            text-align: right;
+        }
+
+        .info-bullets {
+            font-size: 13px;
+            color: #333333;
+            margin: 0;
+            padding-left: 18px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px 20px;
+        }
+
+        .info-bullets li {
+            margin-bottom: 2px;
+        }
+
+        /* PRINT STYLES */
+        @media print {
+            body {
+                background: #ffffff;
+                color: #000000;
+                padding: 0;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                padding: 0;
+                max-width: 100%;
+            }
+
+            .no-print {
+                display: none;
+            }
+
+            a {
+                text-decoration: none !important;
+                color: #000000 !important;
+                border-bottom: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cv-container">
+        <header>
+            <h1>Shree Kamalesh</h1>
+            <div class="title-sub">Narrative Designer &bull; Quest Designer &bull; Game Writer</div>
+            <div class="contact-info">
+                <span>Chennai, India (Willing to Relocate)</span>
+                <span class="bullet-separator">&bull;</span>
+                <span><a href="mailto:shreekamalesh167@gmail.com">shreekamalesh167@gmail.com</a></span>
+                <span class="bullet-separator">&bull;</span>
+                <span>+91 82207 10321</span>
+                <span class="bullet-separator">&bull;</span>
+                <span><a href="https://effective-octo-disco-ten.vercel.app/" target="_blank">Portfolio</a></span>
+                <span class="bullet-separator">&bull;</span>
+                <span><a href="https://www.webnovel.com/profile/4317806097" target="_blank">Webnovel Profile</a></span>
+            </div>
+        </header>
+
+        <section id="summary">
+            <h2>Professional Summary</h2>
+            <p class="summary-text">
+                Technical Quest and Narrative Designer with a proven track record of designing complex branching systems, writing high-impact dialogue, and managing massive content pipelines. Wrote 750,000+ words of serialized fantasy/LitRPG content on strict production schedules and designed interactive fiction with 6,000+ player sessions. Specializes in bridging the gap between gameplay systems and narrative structure: mapping consequences, tracking world states with variables, and scripting branching dialogue logic. Fully prepared to relocate to Warsaw to contribute to Elsewhere Entertainment's new IP.
+            </p>
+        </section>
+
+        <section id="skills">
+            <h2>Core Skills</h2>
+            <div class="skills-grid">
+                <div class="skills-category">
+                    <h3>Technical Quest Design</h3>
+                    <ul class="skills-list">
+                        <li>Branching Quest Flows & Documentation</li>
+                        <li>Variable State Tracking (If/Else, Flags)</li>
+                        <li>ChoiceScript Implementation</li>
+                        <li>Dialogue Scripting & Pacing</li>
+                        <li>Prompt Engineering & Generative Pipelines</li>
+                    </ul>
+                </div>
+                <div class="skills-category">
+                    <h3>Narrative & Engineering</h3>
+                    <ul class="skills-list">
+                        <li>Worldbuilding & Faction Philosophy</li>
+                        <li>Character & Dialogue Writing</li>
+                        <li>React, JavaScript, Git</li>
+                        <li>Basic Python & Java</li>
+                        <li>Consequence Mapping & Systems</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Narrative & Quest Design Projects</h2>
+            
+            <div class="project-item">
+                <div class="item-header">
+                    <span class="item-title"><a href="https://pdfhost.io/v/XbyK2M6k3h_Scenarists_Gambit_QDD_v2" target="_blank">The Scenarist's Gambit — Quest Design Document (QDD)</a></span>
+                    <span class="item-meta">Systems & Scripting</span>
+                </div>
+                <ul class="item-bullets">
+                    <li>Authored a comprehensive Quest Design Document detailing quest flow, player choice maps, and consequence systems.</li>
+                    <li>Modeled a multi-path quest with distinct political and social consequences based on player choices, implementing state variable checks, dialogue flags, and reactive NPC behavior.</li>
+                    <li>Produced detailed scene-by-scene script breakdowns, flowcharts, dialogue nodes, and conditional event triggers.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <span class="item-title"><a href="https://cogdemos.ink/go/7675" target="_blank">Rise of the Exiled Bastard — Published Interactive Game</a></span>
+                    <span class="item-meta">6,000+ Player Sessions</span>
+                </div>
+                <ul class="item-bullets">
+                    <li>Developed and published a choice-driven interactive narrative game using ChoiceScript, managing the entire loop from concept to final debugging.</li>
+                    <li>Coded dynamic stat tracking, inventory flags, and faction relationship counters to govern narrative branch endings.</li>
+                    <li>Independently handled design, writing, scripting, logic validation, and community-driven post-release updates.</li>
+                </ul>
+            </div>
+
+            <div class="project-item">
+                <div class="item-header">
+                    <span class="item-title"><a href="https://pdfhost.io/v/MpuBkmjGV2_Pitching_Doc" target="_blank">What the Archive Forgot — Quest Pitch Document</a></span>
+                    <span class="item-meta">Concept & Presentation</span>
+                </div>
+                <ul class="item-bullets">
+                    <li>Designed a concise quest pitch layout featuring core theme statements, tone references, and a three-path player choice model.</li>
+                    <li>Demonstrated strong written pitching skills by communicating complex quest branches and character voices on a single page.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div class="exp-item">
+                <div class="item-header">
+                    <span class="item-title">Independent Narrative Designer & Author <span style="font-weight: normal; color: var(--color-secondary)">(Pen Name: Stylish_Demon)</span></span>
+                    <span class="item-meta">2022 – Present</span>
+                </div>
+                <div style="font-size: 13px; color: var(--color-secondary); margin-bottom: 4px; font-style: italic;">Webnovel Platform &bull; 750,000+ Words Published</div>
+                <ul class="item-bullets">
+                    <li>Wrote and serialized three original fantasy and LitRPG book series: <em>Rebirth Over the Horizon</em>, <em>Surviving by Relying on my Yandere Fiancee</em>, and <em>VRMMO: My First Contractee is Yandere</em>.</li>
+                    <li>Designed deep world progression systems, faction hierarchies, and stat-based rulesets to sustain long-term player/reader retention.</li>
+                    <li>Maintained daily publishing schedules under strict deadlines, analyzing reader engagement metrics to adapt story pacing.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <div class="edu-item">
+                <div>
+                    <div class="edu-name">Bachelor of Technology (B.Tech) in Computer Science and Business Systems</div>
+                    <div style="font-size: 13px; color: var(--color-secondary);">Panimalar Engineering College, Chennai, India</div>
+                </div>
+                <div class="edu-meta">
+                    <div>Expected Graduation:</div>
+                    <div style="font-weight: bold;">March 2027</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="additional">
+            <h2>Additional Information</h2>
+            <ul class="info-bullets">
+                <li><strong>Languages:</strong> English (Professional), Tamil (Native), Hindi (Conversational), Polish (Beginner).</li>
+                <li><strong>Mobility:</strong> 100% willing and ready to relocate to Warsaw, Poland.</li>
+                <li><strong>Expertise:</strong> In-depth design analysis of AAA RPGs (Witcher 3, Cyberpunk 2077, BG3, Elden Ring).</li>
+                <li><strong>Work Ethic:</strong> Highly self-motivated, organized, and experienced in cross-functional pipelines.</li>
+            </ul>
+        </section>
+    </div>
+
+</body>
+</html>

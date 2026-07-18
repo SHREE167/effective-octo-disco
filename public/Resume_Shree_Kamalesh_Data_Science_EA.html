@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shree Kamalesh — Associate Data Science Engineer CV</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Georgia", serif;
+      font-size: 11.5px;
+      color: #1a1a1a;
+      background: #f4f4f4;
+      padding: 30px 20px;
+      line-height: 1.45;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 42px 50px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    /* ── HEADER ── */
+    .header { border-bottom: 2px solid #1a1a1a; padding-bottom: 10px; margin-bottom: 14px; }
+    .header h1 { font-size: 22px; letter-spacing: 1.5px; text-transform: uppercase; font-family: "Arial", sans-serif; }
+    .header .title { font-size: 12px; font-family: "Arial", sans-serif; color: #444; letter-spacing: 0.8px; margin: 3px 0 7px; }
+    .contact-row { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: 11px; font-family: "Arial", sans-serif; color: #333; }
+    .contact-row a { color: #1a1a1a; text-decoration: none; border-bottom: 1px dotted #888; }
+
+    /* ── SECTION ── */
+    section { margin-bottom: 13px; }
+    h2 {
+      font-family: "Arial", sans-serif;
+      font-size: 10.5px;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-weight: 700;
+      border-bottom: 1px solid #1a1a1a;
+      padding-bottom: 2px;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+    }
+
+    /* ── SUMMARY ── */
+    .summary p { font-size: 11.5px; color: #222; }
+
+    /* ── CERTIFICATIONS ── */
+    .cert-item { margin-bottom: 6px; }
+    .cert-name { font-weight: bold; font-family: "Arial", sans-serif; font-size: 11.5px; }
+    .cert-score {
+      display: inline-block;
+      background: #1a1a1a;
+      color: #fff;
+      font-family: "Arial", sans-serif;
+      font-size: 9.5px;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      padding: 1px 6px;
+      border-radius: 2px;
+      margin-left: 6px;
+      vertical-align: middle;
+    }
+    .cert-detail { font-size: 10.5px; color: #555; margin-top: 1px; font-style: italic; }
+
+    /* ── SKILLS ── */
+    .skills-grid { display: grid; grid-template-columns: 100px 1fr; row-gap: 4px; }
+    .skill-label { font-family: "Arial", sans-serif; font-weight: bold; font-size: 11px; color: #1a1a1a; }
+    .skill-value { font-size: 11px; color: #333; }
+
+    /* ── PROJECTS & EXPERIENCE ── */
+    .item { margin-bottom: 10px; }
+    .item:last-child { margin-bottom: 0; }
+    .item-head { display: flex; justify-content: space-between; align-items: baseline; }
+    .item-title { font-family: "Arial", sans-serif; font-weight: bold; font-size: 11.5px; }
+    .item-title a { color: #1a1a1a; text-decoration: none; border-bottom: 1px solid #aaa; }
+    .item-meta { font-family: "Arial", sans-serif; font-size: 10.5px; color: #555; font-style: italic; }
+    .item-sub { font-size: 10.5px; color: #444; margin-bottom: 3px; font-family: "Arial", sans-serif; }
+    ul.bullets { padding-left: 15px; margin-top: 3px; }
+    ul.bullets li { margin-bottom: 2.5px; font-size: 11px; color: #222; }
+    ul.bullets li strong { color: #1a1a1a; }
+
+    /* ── HIGHLIGHT BADGE ── */
+    .metric-badge {
+      display: inline-block;
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      border-radius: 2px;
+      font-family: "Arial", sans-serif;
+      font-size: 9.5px;
+      font-weight: bold;
+      padding: 1px 6px;
+      margin-left: 5px;
+      color: #333;
+      vertical-align: middle;
+    }
+
+    /* ── EDUCATION ── */
+    .edu-row { display: flex; justify-content: space-between; align-items: baseline; }
+    .edu-name { font-family: "Arial", sans-serif; font-weight: bold; font-size: 11.5px; }
+    .edu-date { font-family: "Arial", sans-serif; font-size: 10.5px; color: #555; font-style: italic; }
+    .edu-school { font-size: 11px; color: #444; margin: 1px 0; }
+    .edu-courses { font-size: 10.5px; color: #555; font-style: italic; margin-top: 2px; }
+
+    /* ── ACHIEVEMENTS ── */
+    .ach-list { padding-left: 15px; }
+    .ach-list li { font-size: 11px; margin-bottom: 2.5px; }
+
+    /* ── PRINT ── */
+    @media print {
+      body { background: #fff; padding: 0; }
+      .page { box-shadow: none; padding: 28px 38px; max-width: 100%; }
+      a { text-decoration: none; color: #1a1a1a !important; border-bottom: none !important; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <h1>Shree Kamalesh</h1>
+    <div class="title">Associate Data Science Engineer &nbsp;·&nbsp; Computer Science & Business Systems</div>
+    <div class="contact-row">
+      <span>shreekamalesh167@gmail.com</span>
+      <span>+91 82207 10321</span>
+      <span>Chennai, India</span>
+      <span><a href="https://www.kaggle.com/vshreekamalesh" target="_blank">kaggle.com/vshreekamalesh</a></span>
+      <span><a href="https://github.com/SHREE167" target="_blank">github.com/SHREE167</a></span>
+    </div>
+  </header>
+
+  <!-- SUMMARY -->
+  <section class="summary">
+    <h2>Professional Summary</h2>
+    <p>
+      Computer Science &amp; Business Systems student with hands-on Python data engineering, SQL, and statistical analysis skills. 
+      Currently working as a Data Analyst Intern at Beeskilled. Developed a production-grade Steam Player Analytics pipeline and published 
+      a popular F1 Kaggle dataset and companion EDA notebook with <strong>2,380+ views and 409+ downloads</strong>. Certified in Data Science 
+      by NASSCOM with a <strong>98/100 Gold score</strong>, Python for Data Science by IIT Madras (Elite), and Snowflake Cloud Data Warehousing. 
+      Proficient in managing and creating real datasets from web sources and documenting them for analytical usage. Passionate about player analytics and game experiences.
+    </p>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section>
+    <h2>Certifications</h2>
+
+    <div class="cert-item">
+      <div class="cert-name">
+        Data Science for Beginners — NASSCOM FutureSkills Prime
+        <span class="cert-score">98 / 100 &nbsp;·&nbsp; GOLD</span>
+      </div>
+      <div class="cert-detail">
+        NSQF Level 6 &nbsp;·&nbsp; IT-ITeS Sector Skills Council, NASSCOM &nbsp;·&nbsp;
+        Ministry of Electronics &amp; Information Technology, Government of India &nbsp;·&nbsp; Dec 2023
+        &nbsp;·&nbsp; ID: FSP/2023/12/5648023
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-name">
+        Python for Data Science — NPTEL, IIT Madras
+        <span class="cert-score">ELITE</span>
+      </div>
+      <div class="cert-detail">
+        Proctored &amp; Verified National Assessment &nbsp;·&nbsp; Ministry of Education, Government of India &nbsp;·&nbsp;
+        Swayam Platform &nbsp;·&nbsp; Roll No: NPTEL25CS104S333300857 &nbsp;·&nbsp; Jul–Aug 2025
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-name">
+        Training for Snowflake — Simplilearn SkillUp
+        <span class="cert-score">VERIFIED</span>
+      </div>
+      <div class="cert-detail">
+        Cloud Data Warehousing course &nbsp;·&nbsp; Certificate Code: 10399895 &nbsp;·&nbsp; June 2026
+      </div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-name">Database Integration — Oracle</div>
+      <div class="cert-detail">Relational database design, SQL querying, and integration principles</div>
+    </div>
+
+    <div class="cert-item">
+      <div class="cert-name">Frontend Development with React — Infosys Springboard</div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL SKILLS -->
+  <section>
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <span class="skill-label">Languages</span>
+      <span class="skill-value">Python, SQL, JavaScript, Java, R</span>
+
+      <span class="skill-label">Data & Analysis</span>
+      <span class="skill-value">Pandas, Matplotlib, NumPy, Seaborn, DuckDB, SciPy, EDA, Data Wrangling, NLP, TF-IDF, Statistical Analysis</span>
+
+      <span class="skill-label">Databases</span>
+      <span class="skill-value">PostgreSQL, Snowflake (Cloud Data Warehousing), SQL (joins, aggregations, subqueries)</span>
+
+      <span class="skill-label">Engineering</span>
+      <span class="skill-value">Web Ingestion (ETL), Concurrent Pipelines (ThreadPoolExecutor), REST APIs, CSV/JSON processing, Flask</span>
+
+      <span class="skill-label">Tools</span>
+      <span class="skill-value">Git, GitHub, Kaggle, Firebase, Streamlit, React</span>
+
+      <span class="skill-label">Concepts</span>
+      <span class="skill-value">Machine Learning (Supervised &amp; Unsupervised), A/B Testing, Probability &amp; Statistics, Data Pipeline Design</span>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section>
+    <h2>Projects</h2>
+
+    <div class="item">
+      <div class="item-head">
+        <span class="item-title">
+          <a href="https://github.com/SHREE167/Steam-Player-Experience-Intelligence" target="_blank">
+            Steam Player Experience Intelligence (PEI)
+          </a>
+        </span>
+        <span class="item-meta">Python · DuckDB · Scikit-Learn · Streamlit</span>
+      </div>
+      <ul class="bullets">
+        <li>Architected a production-grade player analytics pipeline fetching real-time game reviews and metadata using the Steam Web API (ETL).</li>
+        <li>Modeled a performant dimensional database schema in DuckDB to store raw data and compute rolling averages, daily KPIs, and review velocities.</li>
+        <li>Developed a Weak Supervision NLP model leveraging regex bootstrapping and a scikit-learn MultiOutputClassifier to categorize unstructured text into 6 complaint dimensions (performance, monetization, bugs, balance, matchmaking, grind).</li>
+        <li>Formulated the <strong>Player Experience Risk Index (PERI)</strong>, a custom compound metric weighting overall negative sentiment, veteran churn (playtime >50 hours), and recent momentum to flag churn risks.</li>
+        <li>Built an interactive Streamlit dashboard displaying daily KPI trends, risk heatmaps, and automated operational action plans.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <span class="item-title">A/B Testing Framework — Game Onboarding Optimization</span>
+        <span class="item-meta">Python · SciPy · Statistical Inference</span>
+      </div>
+      <ul class="bullets">
+        <li>Designed and executed an end-to-end A/B test on two mobile game onboarding flows using the Cookie Cats dataset (90,000 real players).</li>
+        <li>Performed sample size calculations using a two-proportion z-test power analysis to ensure experiment validity and statistical power.</li>
+        <li>Applied Welch's t-test, two-proportion z-test, and chi-square test across primary and secondary metrics: Day-7 retention, session length, and in-app purchase (IAP) conversion.</li>
+        <li>Identified a statistically significant retention lift (p=0.0145) and framed findings as a product recommendation with projected revenue impact.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <span class="item-title">
+          <a href="https://www.kaggle.com/datasets/vshreekamalesh/comprehensive-formula-1-dataset-2020-2025" target="_blank">
+            F1 Performance Analytics &amp; Curation Dataset
+          </a>
+          <span class="metric-badge">2,380 Views</span>
+          <span class="metric-badge">409 Downloads</span>
+        </span>
+        <span class="item-meta">Python · Exploratory Data Analysis · Kaggle</span>
+      </div>
+      <ul class="bullets">
+        <li>Designed and published a structured <strong>multi-table relational dataset</strong> across 7 normalized CSV files covering race results, qualifying metrics, standings, and circuit specifications.</li>
+        <li>Developed and published a companion F1 performance EDA notebook to analyze qualifying-to-race conversion rates across 24 rounds, generating 400+ downloads by the data science community.</li>
+        <li>Identified key race insights, including a Pearson correlation of <strong>0.892</strong> between grid slots and race finishes, contrasted by a low <strong>12.5%</strong> pole-to-win rate due to race-day strategy.</li>
+        <li>Visualized team point trajectories and driver performance dynamics using Seaborn and Matplotlib with custom team color palettes.</li>
+      </ul>
+    </div>
+
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section>
+    <h2>Experience</h2>
+    <div class="item">
+      <div class="item-head">
+        <span class="item-title">Data Analyst Intern — Beeskilled (via National Internship Portal)</span>
+        <span class="item-meta">Jun 2026 – Present</span>
+      </div>
+      <ul class="bullets">
+        <li>Selected through a competitive national screening process for a focused Data Analyst internship.</li>
+        <li>Collaborating on data transformation, business KPI tracking, and statistical reporting tasks using SQL and Python.</li>
+      </ul>
+    </div>
+
+    <div class="item">
+      <div class="item-head">
+        <span class="item-title">JavaScript Frontend Development Intern — Q-Spider</span>
+        <span class="item-meta">2024 · 30-Day Intensive Program</span>
+      </div>
+      <ul class="bullets">
+        <li>Completed a structured 30-day internship covering JavaScript, Firebase, modern state management, and frontend engineering best practices.</li>
+        <li>Delivered a fully functional, Firebase-backed music player with real-time data sync as the graded capstone project.</li>
+        <li>Gained applied exposure to SQL and database integration principles alongside frontend development.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section>
+    <h2>Education</h2>
+    <div class="item">
+      <div class="edu-row">
+        <span class="edu-name">B.Tech — Computer Science &amp; Business Systems</span>
+        <span class="edu-date">Expected: September 2027</span>
+      </div>
+      <div class="edu-school">Panimalar Engineering College, Chennai, India</div>
+      <div class="edu-courses">
+        Relevant Coursework: Statistics &amp; Probability · Database Management Systems · Machine Learning (Credit Course) · Data Structures &amp; Algorithms · Object-Oriented Programming · R · Python(VAC)
+      </div>
+    </div>
+  </section>
+
+  <!-- ACHIEVEMENTS -->
+  <section>
+    <h2>Achievements &amp; Activities</h2>
+    <ul class="ach-list">
+      <li><strong>8th Place of 25 Teams</strong> — 36-Hour Hackathon, Amrita Engineering College (competitive problem-solving under pressure)</li>
+      <li><strong>Datathon 2026</strong> — Active Participant</li>
+      <li><strong>Finalist</strong> — Inter-College Ideathon, First Year (early-stage product &amp; idea validation)</li>
+      <li>Active competitor on <strong>HackerRank</strong> with consistent participation in algorithmic coding challenges</li>
+    </ul>
+  </section>
+
+  <!-- ADDITIONAL -->
+  <section>
+    <h2>Additional Information</h2>
+    <div class="skills-grid">
+      <span class="skill-label">Languages</span>
+      <span class="skill-value">English (Fluent, C2) &nbsp;·&nbsp; Tamil (Native) &nbsp;·&nbsp; Hindi (Proficient, C2) &nbsp;·&nbsp; Telugu (Intermediate, B1)</span>
+      <span class="skill-label">Interests</span>
+      <span class="skill-value">Football gaming (FC 19, 23, 25, 26) performance analytics, player behavior modeling, sports data science, competitive gaming, open world gaming, map analysis</span>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>

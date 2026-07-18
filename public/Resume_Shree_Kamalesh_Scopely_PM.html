@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shree Kamalesh — Game Product Manager Resume (Scopely)</title>
+  <style>
+    /* ── BASE & PRINT SETUP ── */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-size: 10.5px;
+      line-height: 1.4;
+      color: #1a1a1a;
+      background: #f4f4f4;
+      padding: 20px 5px;
+    }
+
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      min-height: 1060px; /* Precise single A4 print height */
+      border: 1px solid #e0dcd5;
+    }
+
+    /* ── LEFT COLUMN (CREAM SIDEBAR) ── */
+    .left-col {
+      background-color: #FAF8F4;
+      border-right: 1px solid #ebdcc5;
+      padding: 24px 18px;
+    }
+
+    .name-heading {
+      font-family: 'Georgia', serif;
+      font-size: 24px;
+      font-weight: bold;
+      color: #1C1B1A;
+      line-height: 1.1;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 20px;
+    }
+
+    .contact-list {
+      list-style: none;
+      margin-bottom: 20px;
+    }
+    .contact-list li {
+      margin-bottom: 7px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      color: #444;
+      font-size: 9.5px;
+      word-break: break-all;
+    }
+    .contact-list a {
+      color: #1a1a1a;
+      text-decoration: none;
+      border-bottom: 1px dotted #888;
+    }
+
+    .sidebar-h2 {
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #1C1B1A;
+      border-bottom: 1.5px solid #1C1B1A;
+      padding-bottom: 3px;
+      margin-bottom: 10px;
+      margin-top: 20px;
+    }
+    .sidebar-h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .edu-item {
+      margin-bottom: 10px;
+    }
+    .edu-degree { font-weight: bold; color: #1a1a1a; font-size: 10.5px; }
+    .edu-school { font-style: italic; color: #555; font-size: 9.5px; margin: 2px 0; }
+    .edu-date { color: #666; font-size: 9px; }
+    .edu-note {
+      font-size: 8.5px;
+      color: #777;
+      margin-top: 3px;
+      line-height: 1.2;
+    }
+
+    .skill-cat {
+      margin-bottom: 9px;
+    }
+    .skill-cat-title {
+      font-weight: 700;
+      font-size: 9.5px;
+      color: #1c1b1a;
+      margin-bottom: 2px;
+      text-transform: uppercase;
+    }
+    .skill-list {
+      color: #444;
+      font-size: 9.5px;
+      line-height: 1.35;
+    }
+
+    .lang-item {
+      font-size: 9.5px;
+      color: #444;
+      margin-bottom: 3px;
+    }
+
+    /* ── RIGHT COLUMN (WHITE CONTENT) ── */
+    .right-col {
+      padding: 24px 24px;
+      background: #ffffff;
+    }
+
+    .section-h2 {
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      color: #1C1B1A;
+      border-bottom: 1.5px solid #1C1B1A;
+      padding-bottom: 3px;
+      margin-bottom: 10px;
+      margin-top: 18px;
+    }
+    .section-h2:first-of-type {
+      margin-top: 0;
+    }
+
+    .objective-text {
+      font-size: 10px;
+      color: #333;
+      text-align: justify;
+      line-height: 1.45;
+    }
+
+    .cert-item {
+      margin-bottom: 4px;
+      font-size: 10px;
+      color: #222;
+    }
+    .cert-name {
+      font-weight: bold;
+      color: #1a1a1a;
+    }
+    .cert-issuer {
+      font-style: italic;
+      color: #555;
+      font-size: 9.5px;
+    }
+
+    /* Projects */
+    .project-item {
+      margin-bottom: 12px;
+    }
+    .project-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+    }
+    .project-title {
+      font-size: 11px;
+      font-weight: bold;
+      color: #1a1a1a;
+    }
+    .project-title a {
+      color: #1a1a1a;
+      text-decoration: none;
+      border-bottom: 1px solid #aaa;
+    }
+    .project-meta {
+      font-size: 9px;
+      color: #666;
+      font-style: italic;
+    }
+    .project-bullets {
+      padding-left: 10px;
+      list-style-type: square;
+    }
+    .project-bullets li {
+      font-size: 10px;
+      color: #333;
+      margin-bottom: 2.5px;
+      line-height: 1.35;
+    }
+
+    /* Highlight box for key achievements */
+    .highlight-box {
+      background-color: #E8F5E9;
+      border-left: 3px solid #4E7C5E;
+      padding: 3px 6px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    /* ── PRINT MEDIA RULES ── */
+    @media print {
+      body { background: #fff; padding: 0; }
+      .page { box-shadow: none; border: none; max-width: 100%; min-height: 100%; }
+      a { text-decoration: none; color: #1a1a1a !important; border-bottom: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+  
+  <!-- LEFT COLUMN (CREAM) -->
+  <aside class="left-col">
+    <div class="name-heading">Shree<br>Kamalesh</div>
+    
+    <!-- CONTACT -->
+    <ul class="contact-list">
+      <li>✉️ <a href="mailto:shreekamalesh167@gmail.com">shreekamalesh167@gmail.com</a></li>
+      <li>📞 +91 82207 10321</li>
+      <li>📍 Chennai, India (Willing to Relocate)</li>
+      <li>🌐 <a href="https://effective-octo-disco-ten.vercel.app" target="_blank">Portfolio Website</a></li>
+      <li>💻 <a href="https://github.com/SHREE167" target="_blank">GitHub Profile</a></li>
+    </ul>
+
+    <!-- EDUCATION -->
+    <h2 class="sidebar-h2">Education</h2>
+    <div class="edu-item">
+      <div class="edu-degree">B.Tech — Computer Science &amp; Business Systems</div>
+      <div class="edu-school">Panimalar Engineering College</div>
+      <div class="edu-date">May 2027 | Chennai</div>
+      <div class="edu-note">* Note: University permits early placement release for immediate full-time employment.</div>
+    </div>
+
+    <!-- SKILLS -->
+    <h2 class="sidebar-h2">Skills</h2>
+    
+    <div class="skill-cat">
+      <div class="skill-cat-title">LiveOps &amp; Game PM</div>
+      <div class="skill-list">LiveOps Management, Event Design, Product Requirement Documents (PRDs), A/B Testing &amp; Experimentation, Monetization Loops, Player Cohort Analysis, Funnel Analysis.</div>
+    </div>
+    
+    <div class="skill-cat">
+      <div class="skill-cat-title">Data &amp; Analytics</div>
+      <div class="skill-list">SQL (joins, schemas), Python (Pandas, SciPy, Scikit-learn), DuckDB, Statistical Inference (Welch's t-test, z-test, Chi-Square), Tableau, Excel (advanced modeling).</div>
+    </div>
+    
+    <div class="skill-cat">
+      <div class="skill-cat-title">Productivity &amp; Tools</div>
+      <div class="skill-list">Jira, Confluence, Miro, Git, GitHub, PowerPoint.</div>
+    </div>
+
+    <!-- LANGUAGES -->
+    <h2 class="sidebar-h2">Languages</h2>
+    <div class="lang-item"><strong>English</strong> (Fluent, C2)</div>
+    <div class="lang-item"><strong>Tamil</strong> (Native)</div>
+    <div class="lang-item"><strong>Hindi</strong> (Proficient, C2)</div>
+    <div class="lang-item"><strong>Telugu</strong> (Intermediate, B1)</div>
+  </aside>
+
+  <!-- RIGHT COLUMN (WHITE) -->
+  <main class="right-col">
+    <!-- OBJECTIVE -->
+    <h2 class="section-h2">Professional Summary</h2>
+    <p class="objective-text">
+      Analytical Product Manager focused on LiveOps, player retention, experimentation, and game economy design. Combines a technical Computer Science &amp; Business Systems (CSBS) background with hands-on experience running statistical A/B tests on mobile gaming datasets. Passionate about leveraging player segmentation, cohort analysis, and data-driven offer strategies to improve player lifecycle value (LTV) and monetization metrics in midcore free-to-play mobile games.
+    </p>
+
+    <!-- CERTIFICATIONS -->
+    <h2 class="section-h2">Certifications</h2>
+    <div class="cert-item">
+      <span class="cert-name">Frontend Development with React</span> — <span class="cert-issuer">Infosys Springboard (Verified Credential)</span>
+    </div>
+    <div class="cert-item">
+      <span class="cert-name">Software Program for JAVA</span> — <span class="cert-issuer">NASSCOM FutureSkills Prime</span>
+    </div>
+    <div class="cert-item">
+      <span class="cert-name">Python for Data Science</span> — <span class="cert-issuer">NPTEL, IIT Madras (Elite Category)</span>
+    </div>
+    <div class="cert-item">
+      <span class="cert-name">Data Science</span> — <span class="cert-issuer">NASSCOM (98/100 Gold Category)</span>
+    </div>
+
+    <!-- PROJECTS -->
+    <h2 class="section-h2">Featured Product &amp; Liveops Projects</h2>
+
+    <!-- NEW CASE STUDY PROJECT -->
+    <div class="project-item">
+      <div class="project-head">
+        <span class="project-title">LiveOps Event &amp; Economy Analysis — Clash Royale</span>
+        <span class="project-meta">Case Study · <a href="https://pdfhost.io/v/FMjVJ7usLv_PRD" target="_blank">View PRD</a> · <a href="https://clash-royale-economy-model.tiiny.site" target="_blank">View Excel Model</a></span>
+      </div>
+      <ul class="project-bullets">
+        <li class="highlight-box">Designed a simulated 30-day "Clan War Booster" LiveOps event calendar targeting midcore player retention, detailing daily event pacing and microtransaction offer bundles.</li>
+        <li>Modeled the card and gold upgrade progression economy in Excel to calculate the progression time required for a player to reach max level without economy inflation.</li>
+        <li>Drafted a mock Product Requirement Document (PRD) outlining experiment designs, player cohort segmentation, and success metrics (D7 retention, gold spend).</li>
+      </ul>
+    </div>
+    
+    <!-- A/B TESTING -->
+    <div class="project-item">
+      <div class="project-head">
+        <span class="project-title">Mobile Onboarding A/B Testing Framework</span>
+        <span class="project-meta">Python · SciPy · Experimentation · <a href="https://www.kaggle.com/code/vshreekamalesh/cookie-cat-a-b-testing" target="_blank">View Project</a></span>
+      </div>
+      <ul class="project-bullets">
+        <li class="highlight-box">Executed an iterative A/B test on two onboarding flows for the mobile gaming title <strong>Cookie Cats (90,000 players)</strong>, applying mobile-gaming retention insights.</li>
+        <li>Conducted sample size power analysis and applied Welch's t-test and two-proportion z-tests to measure statistical significance.</li>
+        <li>Evaluated game monetization and engagement KPIs: Day-1 retention, Day-7 retention, and in-app purchase (IAP) conversion rates.</li>
+        <li>Translated statistical metrics into a product recommendation report detailing projected revenue impact.</li>
+      </ul>
+    </div>
+
+    <!-- STEAM PEI -->
+    <div class="project-item">
+      <div class="project-head">
+        <span class="project-title">Steam Player Experience Intelligence (PEI)</span>
+        <span class="project-meta">Python · DuckDB · NLP Dashboard · <a href="https://github.com/SHREE167/Steam-Player-Experience-Intelligence" target="_blank">View Project</a></span>
+      </div>
+      <ul class="project-bullets">
+        <li>Built an automated player analytics pipeline extracting game review metadata via Steam Web APIs (ETL).</li>
+        <li>Formulated the <strong>Player Experience Risk Index (PERI)</strong>—a weighted index tracking overall negative sentiment, veteran churn (playtime >50 hours), and recent momentum to flag product health risks.</li>
+        <li>Developed a Weak Supervision NLP model in Python to categorize player complaints into monetization, matchmaking, bugs, performance, and grind.</li>
+        <li>Shipped a Streamlit dashboard visualizing daily KPI trends to suggest automated LiveOps response strategies.</li>
+      </ul>
+    </div>
+
+    <!-- F1 KAGGLE -->
+    <div class="project-item">
+      <div class="project-head">
+        <span class="project-title">F1 Performance Curation &amp; Dataset (Kaggle Portfolio)</span>
+        <span class="project-meta">Python · Relational Data Design · <a href="https://www.kaggle.com/datasets/vshreekamalesh/comprehensive-formula-1-dataset-2020-2025" target="_blank">View Project</a></span>
+      </div>
+      <ul class="project-bullets">
+        <li class="highlight-box">Designed and published a relational dataset across 7 normalized CSV files, generating **2,380+ views and 400+ downloads** by the data science community.</li>
+        <li>Authored an exploratory data analysis (EDA) notebook identifying qualifying-to-race conversion dynamics.</li>
+      </ul>
+    </div>
+
+    <!-- CHOICESCRIPT -->
+    <div class="project-item">
+      <div class="project-head">
+        <span class="project-title">ChoiceScript Interactive Fiction Game</span>
+        <span class="project-meta">ChoiceScript · Shipped Narrative Project · <a href="https://cogdemos.ink/play/snowystare/rise-of-the-exiled-bastard/mygame" target="_blank">View Project</a></span>
+      </div>
+      <ul class="project-bullets">
+        <li>Developed and published *Rise of the Exiled Bastard* using ChoiceScript, achieving **6,490+ unique plays** and positive community reviews.</li>
+        <li>Programmed state variables and flags to track player choices, faction reputations, and stats dynamically.</li>
+      </ul>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>

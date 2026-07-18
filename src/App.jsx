@@ -142,6 +142,68 @@ const projects = [
   }
 ];
 
+const pmProjects = [
+  {
+    id: 101,
+    title: "LiveOps Event & Economy Analysis — Clash Royale",
+    tag: "Product Case Study · PRD & Excel Model",
+    features: [
+      "Designed a 30-day 'Clan War Booster' event calendar to drive mid-season player retention.",
+      "Modeled the card and gold upgrade progression economy in Excel to prevent inflation.",
+      "Drafted a complete PRD detailing player cohorts and A/B test parameters (D7 retention, ARPU)."
+    ],
+    cta: "View Case Study PRD",
+    link: "https://pdfhost.io/v/FMjVJ7usLv_PRD"
+  },
+  {
+    id: 102,
+    title: "Mobile Onboarding A/B Testing Framework",
+    tag: "Experimentation & Statistical Analysis",
+    features: [
+      "Analyzed onboarding flow impacts using the Cookie Cats dataset (90,000 real players).",
+      "Conducted sample size power analysis and applied Welch's t-test and two-proportion z-tests.",
+      "Evaluated primary game KPIs: Day-1 retention, Day-7 retention, and in-app purchase conversion."
+    ],
+    cta: "View A/B Test Project",
+    link: "https://www.kaggle.com/code/vshreekamalesh/cookie-cat-a-b-testing"
+  },
+  {
+    id: 103,
+    title: "Steam Player Experience Intelligence (PEI)",
+    tag: "Game Analytics & NLP Pipeline",
+    features: [
+      "Built an automated player analytics ETL pipeline extracting game reviews via Steam Web APIs.",
+      "Formulated the Player Experience Risk Index (PERI) to monitor player churn and sentiment.",
+      "Developed a Weak Supervision NLP model in Python to categorize player complaints."
+    ],
+    cta: "View Project Repository",
+    link: "https://github.com/SHREE167/Steam-Player-Experience-Intelligence"
+  },
+  {
+    id: 104,
+    title: "F1 Performance Curation & Dataset",
+    tag: "Kaggle Data Curation Portfolio",
+    features: [
+      "Published a multi-table relational dataset across 7 normalized CSV files on Kaggle.",
+      "Generated 2,380+ views and 400+ downloads by the data science community.",
+      "Developed a Python EDA notebook analyzing qualifying-to-race conversion dynamics."
+    ],
+    cta: "View Kaggle Dataset",
+    link: "https://www.kaggle.com/datasets/vshreekamalesh/comprehensive-formula-1-dataset-2020-2025"
+  },
+  {
+    id: 105,
+    title: "Rise of the Exiled Bastard",
+    tag: "Interactive Game · Metrics Proof",
+    features: [
+      "Shipped a choice-driven game, earning 6,490+ views and positive community ratings.",
+      "Designed and coded branching variables, state tracking, and faction reputation mechanics."
+    ],
+    cta: "Play Shipped Demo",
+    link: "https://cogdemos.ink/play/snowystare/rise-of-the-exiled-bastard/mygame"
+  }
+];
+
 const characters = [
   {
     id: 1,
@@ -301,6 +363,12 @@ function App() {
   const [openChar, setOpenChar] = useState(null);
   const [scrolled, setScrolled] = useState(false);
   const [lightbox, setLightbox] = useState(null); // { src, alt }
+  
+  // Detect discipline from URL query parameter (e.g. ?role=pm)
+  const [discipline] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    return params.get('role') === 'pm' ? 'pm' : 'narrative';
+  });
 
   const toggleChar = (id) => {
     setOpenChar(openChar === id ? null : id);
@@ -342,9 +410,9 @@ function App() {
         </a>
         <div className="nav-links">
           <a href="#projects">Projects</a>
-          <a href="#experience">Output</a>
-          <a href="#process">Pipeline</a>
-          <a href="#characters">Characters</a>
+          <a href="#experience">Metrics</a>
+          <a href="#philosophy">Skills &amp; Focus</a>
+          {discipline === 'narrative' && <a href="#characters">Characters</a>}
           <a href="#contact">Contact</a>
         </div>
       </nav>
@@ -355,32 +423,39 @@ function App() {
         {/* ── HERO ─────────────────────────────────── */}
         <header className="hero" id="hero">
 
-
           <h1 className="hero-name" aria-label="Shree Kamalesh" style={{ whiteSpace: 'nowrap' }}>
             Shree Kamalesh
           </h1>
 
           <p className="hero-roles">
-            <span>Narrative Designer</span>
-            <span>Quest Designer</span>
-            <span>Game Writer</span>
+            {discipline === 'pm' ? (
+              <>
+                <span>Associate Product Manager</span>
+                <span>Game Analyst</span>
+                <span>LiveOps Specialist</span>
+              </>
+            ) : (
+              <>
+                <span>Narrative Designer</span>
+                <span>Quest Designer</span>
+                <span>Game Writer</span>
+              </>
+            )}
           </p>
 
           <RunicDivider />
 
           <p className="hero-statement">
-            I build worlds where every choice leaves a scar. Branching narrative, consequence systems,
-            and character design crafted to give players the weight of consequence — and the grace to bear it.
+            {discipline === 'pm' ? (
+              "I optimize player engagement, monetization, and retention in free-to-play mobile games. Combining software systems engineering logic with statistical experimentation to design balanced, rewarding player lifecycles."
+            ) : (
+              "I build worlds where every choice leaves a scar. Branching narrative, consequence systems, and character design crafted to give players the weight of consequence — and the grace to bear it."
+            )}
           </p>
 
           <div className="hero-actions">
             <a href="#projects" className="btn btn-primary">View My Work <ArrowRight size={14} /></a>
-            <a href="#philosophy" className="btn btn-ghost">Read My Lore</a>
-          </div>
-          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1rem' }}>
-            <a href="#author-highlight" className="btn btn-ghost" style={{ fontSize: '0.75rem', padding: '0.5em 2em', borderColor: 'var(--gold-dim)', color: 'var(--gold-dim)', letterSpacing: '0.25em' }}>
-              Experience
-            </a>
+            <a href="#philosophy" className="btn btn-ghost">Read My Focus</a>
           </div>
 
           <div className="hero-metrics" style={{
@@ -410,11 +485,23 @@ function App() {
           <Panel className="recruiter-box">
             <p className="recruiter-title">Looking for</p>
             <ul className="recruiter-roles">
-              <li>Narrative Design</li>
-              <li>Quest Design</li>
-              <li>Game Writing</li>
-              <li>Interactive Storytelling</li>
-              <li>Internships & Graduate Roles</li>
+              {discipline === 'pm' ? (
+                <>
+                  <li>Game Product Management</li>
+                  <li>LiveOps &amp; Event Design</li>
+                  <li>A/B Testing &amp; Analytics</li>
+                  <li>Game Economy Balance</li>
+                  <li>MNC Internships &amp; APM Roles</li>
+                </>
+              ) : (
+                <>
+                  <li>Narrative Design</li>
+                  <li>Quest Design</li>
+                  <li>Game Writing</li>
+                  <li>Interactive Storytelling</li>
+                  <li>Internships &amp; Graduate Roles</li>
+                </>
+              )}
             </ul>
           </Panel>
         </RevealSection>
@@ -474,10 +561,10 @@ function App() {
         {/* ── FEATURED PROJECTS ────────────────────── */}
         <section id="projects" className="content-section">
           <RevealSection animation="reveal-slash-in">
-            <h2 className="section-heading">Featured Projects</h2>
+            <h2 className="section-heading">{discipline === 'pm' ? "Product &amp; LiveOps Projects" : "Featured Quest Projects"}</h2>
           </RevealSection>
           <div className="dossier-grid stagger-grid">
-            {projects.map((item, i) => (
+            {(discipline === 'pm' ? pmProjects : projects).map((item, i) => (
               <RevealSection key={item.id} animation="reveal-glow-in" delay={i * 120}>
                 <Panel style={{ height: '100%' }}>
                   <div className="dossier-header">{item.tag}</div>
@@ -509,10 +596,19 @@ function App() {
         <div id="philosophy" className="split-section">
           <RevealSection animation="reveal-fade-up">
             <section className="philosophy-section content-section">
-              <h2 className="section-heading">Design Philosophy</h2>
+              <h2 className="section-heading">{discipline === 'pm' ? "Product Approach" : "Design Philosophy"}</h2>
               <Panel className="philosophy-box">
-                <p>I believe the most memorable RPG stories emerge when player choices create meaningful consequences.</p>
-                <p>My work focuses on combining narrative, systems, and player agency to create experiences where characters, worldbuilding, and gameplay reinforce one another.</p>
+                {discipline === 'pm' ? (
+                  <>
+                    <p>I believe great mobile games balance player happiness with sustainable business metrics.</p>
+                    <p>My work combines software systems engineering with player segment analysis, mapping progression faucet/sink balances to design impactful LiveOps event schedules.</p>
+                  </>
+                ) : (
+                  <>
+                    <p>I believe the most memorable RPG stories emerge when player choices create meaningful consequences.</p>
+                    <p>My work focuses on combining narrative, systems, and player agency to create experiences where characters, worldbuilding, and gameplay reinforce one another.</p>
+                  </>
+                )}
               </Panel>
             </section>
           </RevealSection>
@@ -521,33 +617,64 @@ function App() {
             <section className="skills-section content-section">
               <h2 className="section-heading">Skills</h2>
               <div className="skills-grid">
-                <Panel className="skill-category">
-                  <h3>Narrative Design</h3>
-                  <ul>
-                    <li>Branching Narrative Design</li>
-                    <li>Quest Design</li>
-                    <li>Dialogue Writing</li>
-                    <li>Character Development</li>
-                    <li>Worldbuilding</li>
-                    <li>Interactive Storytelling</li>
-                    <li>Narrative Systems Design</li>
-                    <li>Consequence Mapping</li>
-                    <li>Interactive Fiction</li>
-                  </ul>
-                </Panel>
-                <Panel className="skill-category">
-                  <h3>Technical</h3>
-                  <ul>
-                    <li>Narrative Documentation</li>
-                    <li>Prompt Engineering</li>
-                    <li>Local LLM Workflows</li>
-                    <li>Generative Asset Pipelines (ComfyUI)</li>
-                    <li>Narrative Prototyping</li>
-                    <li>ChoiceScript</li>
-                    <li>Basic Python / Java</li>
-                    <li>React</li>
-                  </ul>
-                </Panel>
+                {discipline === 'pm' ? (
+                  <>
+                    <Panel className="skill-category">
+                      <h3>LiveOps &amp; PM</h3>
+                      <ul>
+                        <li>LiveOps Management</li>
+                        <li>Event Design</li>
+                        <li>Monetization Design</li>
+                        <li>Player Segment Analysis</li>
+                        <li>Cohort &amp; Funnel Analysis</li>
+                        <li>PRD Writing</li>
+                        <li>A/B Testing &amp; Experimentation</li>
+                      </ul>
+                    </Panel>
+                    <Panel className="skill-category">
+                      <h3>Technical &amp; Data</h3>
+                      <ul>
+                        <li>SQL (joins, schemas)</li>
+                        <li>Python (Pandas, SciPy)</li>
+                        <li>DuckDB</li>
+                        <li>Tableau / BI (basic)</li>
+                        <li>Jira &amp; Miro</li>
+                        <li>Excel &amp; PPT</li>
+                        <li>Git &amp; GitHub</li>
+                      </ul>
+                    </Panel>
+                  </>
+                ) : (
+                  <>
+                    <Panel className="skill-category">
+                      <h3>Narrative Design</h3>
+                      <ul>
+                        <li>Branching Narrative Design</li>
+                        <li>Quest Design</li>
+                        <li>Dialogue Writing</li>
+                        <li>Character Development</li>
+                        <li>Worldbuilding</li>
+                        <li>Interactive Storytelling</li>
+                        <li>Narrative Systems Design</li>
+                        <li>Consequence Mapping</li>
+                        <li>Interactive Fiction</li>
+                      </ul>
+                    </Panel>
+                    <Panel className="skill-category">
+                      <h3>Technical</h3>
+                      <ul>
+                        <li>Narrative Documentation</li>
+                        <li>Prompt Engineering</li>
+                        <li>Local LLM Workflows</li>
+                        <li>Generative Asset Pipelines (ComfyUI)</li>
+                        <li>Narrative Prototyping</li>
+                        <li>ChoiceScript</li>
+                        <li>Basic Python / Java</li>
+                        <li>React</li>
+                      </ul>
+                    </Panel>
+                  </>
+                )}
               </div>
             </section>
           </RevealSection>
@@ -584,152 +711,156 @@ function App() {
         <RunicDivider />
 
         {/* ── DESIGN PIPELINE ───────────────────────── */}
-        <section id="process" className="content-section">
-          <RevealSection animation="reveal-slash-in">
-            <h2 className="section-heading">Design Pipeline</h2>
-          </RevealSection>
-          <RevealSection animation="reveal-fade-up" delay={200}>
-            <div className="process-flow">
-              {['Concept','Worldbuilding','Character Design','Quest Design','Dialogue Writing','Branching Outcomes'].map((step, i) => (
-                <React.Fragment key={step}>
-                  <div className="process-step codex-panel">
-                    <CornerRunes />
-                    {step}
-                  </div>
-                  <ArrowRight className="process-arrow" size={18} />
-                </React.Fragment>
-              ))}
-              <div className="process-step codex-panel highlight">
-                <CornerRunes />
-                Playable Implementation
+        {discipline === 'narrative' && (
+          <section id="process" className="content-section">
+            <RevealSection animation="reveal-slash-in">
+              <h2 className="section-heading">Design Pipeline</h2>
+            </RevealSection>
+            <RevealSection animation="reveal-fade-up" delay={200}>
+              <div className="process-flow">
+                {['Concept','Worldbuilding','Character Design','Quest Design','Dialogue Writing','Branching Outcomes'].map((step, i) => (
+                  <React.Fragment key={step}>
+                    <div className="process-step codex-panel">
+                      <CornerRunes />
+                      {step}
+                    </div>
+                    <ArrowRight className="process-arrow" size={18} />
+                  </React.Fragment>
+                ))}
+                <div className="process-step codex-panel highlight">
+                  <CornerRunes />
+                  Playable Implementation
+                </div>
               </div>
-            </div>
-          </RevealSection>
-        </section>
+            </RevealSection>
+          </section>
+        )}
 
-        <RunicDivider elaborate />
+        <RunicDivider elaborate = {discipline === 'narrative'} />
 
         {/* ── CHARACTER DIRECTORY ───────────────────── */}
-        <section id="characters" className="content-section">
-          <RevealSection animation="reveal-slash-in">
-            <h2 className="section-heading">Character Directory</h2>
-          </RevealSection>
-          <div className="character-accordion">
-            {characters.map((char, i) => (
-              <RevealSection key={char.id} animation="reveal-fade-up" delay={i * 150}>
-                <div className={`char-card codex-panel ${openChar === char.id ? 'open' : ''}`}>
-                  <CornerRunes />
-                  <div className="char-header" onClick={() => toggleChar(char.id)}>
-                    <div className="char-header-info">
-                      <h3 className="char-name">{char.name}</h3>
-                      <p className="char-quote">"{char.quote}"</p>
-                    </div>
-                    <div className="char-toggle">
-                      {openChar === char.id
-                        ? <ChevronUp size={22} color="var(--gold-pure)" />
-                        : <ChevronDown size={22} color="var(--gold-pure)" />
-                      }
-                    </div>
-                  </div>
-
-                  <div className={`char-details-wrapper ${openChar === char.id ? 'expanded' : ''}`}>
-                    <div className="char-details" style={{ gridTemplateColumns: char.image || char.visualRef ? '180px 1fr' : '1fr 1fr' }}>
-
-                      {/* Portrait column for Vell */}
-                      {char.image && (
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                          <img
-                            src={char.image}
-                            alt={`${char.name} portrait`}
-                            onClick={() => setLightbox({ src: char.image, alt: `${char.name} portrait` })}
-                            title="Click to enlarge"
-                            style={{
-                              width: '100%',
-                              aspectRatio: '3/4',
-                              objectFit: 'cover',
-                              borderRadius: '2px',
-                              border: '1px solid rgba(200,169,110,0.25)',
-                              filter: 'sepia(20%) brightness(0.88) contrast(1.05)',
-                              boxShadow: '0 0 20px rgba(0,0,0,0.6)',
-                              cursor: 'zoom-in',
-                              transition: 'filter 400ms ease, transform 400ms ease, box-shadow 400ms ease',
-                            }}
-                            onMouseEnter={e => { e.currentTarget.style.filter = 'sepia(0%) brightness(1) contrast(1)'; e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.boxShadow = '0 0 30px rgba(200,169,110,0.2)'; }}
-                            onMouseLeave={e => { e.currentTarget.style.filter = 'sepia(20%) brightness(0.88) contrast(1.05)'; e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 0 20px rgba(0,0,0,0.6)'; }}
-                          />
-                          <p style={{ fontSize: '0.65rem', color: 'var(--text-faint)', fontStyle: 'italic', textAlign: 'center', letterSpacing: '0.08em' }}>Click to enlarge</p>
-                        </div>
-                      )}
-
-                      {/* Anya — visual reference column */}
-                      {char.visualRef && (
-                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                          <h4 style={{
-                            fontFamily: 'var(--font-heading)', fontSize: '0.75rem',
-                            textTransform: 'uppercase', letterSpacing: '0.2em',
-                            color: 'var(--silver-pure)', marginBottom: '0.4rem', fontWeight: 600
-                          }}>Visual Reference</h4>
-                          <img
-                            src={char.visualRef}
-                            alt={`${char.name} visual reference`}
-                            onClick={() => setLightbox({ src: char.visualRef, alt: `${char.name} visual reference` })}
-                            title="Click to enlarge"
-                            style={{
-                              width: '100%',
-                              aspectRatio: '3/4',
-                              objectFit: 'cover',
-                              borderRadius: '2px',
-                              border: '1px solid rgba(168,184,208,0.2)',
-                              filter: 'sepia(10%) brightness(0.85)',
-                              boxShadow: '0 0 20px rgba(0,0,0,0.6)',
-                              cursor: 'zoom-in',
-                              transition: 'filter 400ms ease, transform 400ms ease, box-shadow 400ms ease',
-                            }}
-                            onMouseEnter={e => { e.currentTarget.style.filter = 'sepia(0%) brightness(1)'; e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.boxShadow = '0 0 30px rgba(168,184,208,0.2)'; }}
-                            onMouseLeave={e => { e.currentTarget.style.filter = 'sepia(10%) brightness(0.85)'; e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 0 20px rgba(0,0,0,0.6)'; }}
-                          />
-                          <p style={{ fontSize: '0.65rem', color: 'var(--text-faint)', fontStyle: 'italic', textAlign: 'center', letterSpacing: '0.08em' }}>Click to enlarge</p>
-                          <p style={{
-                            fontSize: '0.68rem',
-                            color: 'var(--text-faint)',
-                            fontStyle: 'italic',
-                            letterSpacing: '0.04em',
-                            lineHeight: 1.5,
-                            borderTop: '1px solid rgba(168,184,208,0.1)',
-                            paddingTop: '0.4rem'
-                          }}>
-                            Designed by human · Visual reference by ChatGPT
-                          </p>
-                        </div>
-                      )}
-
-                      {/* Text detail blocks — always in a nested grid */}
-                      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
-                        <div className="char-detail-block">
-                          <h4>Personality</h4>
-                          <p>{char.personality}</p>
-                        </div>
-                        <div className="char-detail-block">
-                          <h4>Goals</h4>
-                          <p>{char.goals}</p>
-                        </div>
-                        <div className="char-detail-block">
-                          <h4>Fears</h4>
-                          <p>{char.fears}</p>
-                        </div>
-                        <div className="char-detail-block">
-                          <h4>Sample Dialogue</h4>
-                          <p className="char-dialogue">{char.dialogue}</p>
-                        </div>
+        {discipline === 'narrative' && (
+          <section id="characters" className="content-section">
+            <RevealSection animation="reveal-slash-in">
+              <h2 className="section-heading">Character Directory</h2>
+            </RevealSection>
+            <div className="character-accordion">
+              {characters.map((char, i) => (
+                <RevealSection key={char.id} animation="reveal-fade-up" delay={i * 150}>
+                  <div className={`char-card codex-panel ${openChar === char.id ? 'open' : ''}`}>
+                    <CornerRunes />
+                    <div className="char-header" onClick={() => toggleChar(char.id)}>
+                      <div className="char-header-info">
+                        <h3 className="char-name">{char.name}</h3>
+                        <p className="char-quote">"{char.quote}"</p>
                       </div>
+                      <div className="char-toggle">
+                        {openChar === char.id
+                          ? <ChevronUp size={22} color="var(--gold-pure)" />
+                          : <ChevronDown size={22} color="var(--gold-pure)" />
+                        }
+                      </div>
+                    </div>
 
+                    <div className={`char-details-wrapper ${openChar === char.id ? 'expanded' : ''}`}>
+                      <div className="char-details" style={{ gridTemplateColumns: char.image || char.visualRef ? '180px 1fr' : '1fr 1fr' }}>
+
+                        {/* Portrait column for Vell */}
+                        {char.image && (
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                            <img
+                              src={char.image}
+                              alt={`${char.name} portrait`}
+                              onClick={() => setLightbox({ src: char.image, alt: `${char.name} portrait` })}
+                              title="Click to enlarge"
+                              style={{
+                                width: '100%',
+                                aspectRatio: '3/4',
+                                objectFit: 'cover',
+                                borderRadius: '2px',
+                                border: '1px solid rgba(200,169,110,0.25)',
+                                filter: 'sepia(20%) brightness(0.88) contrast(1.05)',
+                                boxShadow: '0 0 20px rgba(0,0,0,0.6)',
+                                cursor: 'zoom-in',
+                                transition: 'filter 400ms ease, transform 400ms ease, box-shadow 400ms ease',
+                              }}
+                              onMouseEnter={e => { e.currentTarget.style.filter = 'sepia(0%) brightness(1) contrast(1)'; e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.boxShadow = '0 0 30px rgba(200,169,110,0.2)'; }}
+                              onMouseLeave={e => { e.currentTarget.style.filter = 'sepia(20%) brightness(0.88) contrast(1.05)'; e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 0 20px rgba(0,0,0,0.6)'; }}
+                            />
+                            <p style={{ fontSize: '0.65rem', color: 'var(--text-faint)', fontStyle: 'italic', textAlign: 'center', letterSpacing: '0.08em' }}>Click to enlarge</p>
+                          </div>
+                        )}
+
+                        {/* Anya — visual reference column */}
+                        {char.visualRef && (
+                          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                            <h4 style={{
+                              fontFamily: 'var(--font-heading)', fontSize: '0.75rem',
+                              textTransform: 'uppercase', letterSpacing: '0.2em',
+                              color: 'var(--silver-pure)', marginBottom: '0.4rem', fontWeight: 600
+                            }}>Visual Reference</h4>
+                            <img
+                              src={char.visualRef}
+                              alt={`${char.name} visual reference`}
+                              onClick={() => setLightbox({ src: char.visualRef, alt: `${char.name} visual reference` })}
+                              title="Click to enlarge"
+                              style={{
+                                width: '100%',
+                                aspectRatio: '3/4',
+                                objectFit: 'cover',
+                                borderRadius: '2px',
+                                border: '1px solid rgba(168,184,208,0.2)',
+                                filter: 'sepia(10%) brightness(0.85)',
+                                boxShadow: '0 0 20px rgba(0,0,0,0.6)',
+                                cursor: 'zoom-in',
+                                transition: 'filter 400ms ease, transform 400ms ease, box-shadow 400ms ease',
+                              }}
+                              onMouseEnter={e => { e.currentTarget.style.filter = 'sepia(0%) brightness(1)'; e.currentTarget.style.transform = 'scale(1.02)'; e.currentTarget.style.boxShadow = '0 0 30px rgba(168,184,208,0.2)'; }}
+                              onMouseLeave={e => { e.currentTarget.style.filter = 'sepia(10%) brightness(0.85)'; e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 0 20px rgba(0,0,0,0.6)'; }}
+                            />
+                            <p style={{ fontSize: '0.65rem', color: 'var(--text-faint)', fontStyle: 'italic', textAlign: 'center', letterSpacing: '0.08em' }}>Click to enlarge</p>
+                            <p style={{
+                              fontSize: '0.68rem',
+                              color: 'var(--text-faint)',
+                              fontStyle: 'italic',
+                              letterSpacing: '0.04em',
+                              lineHeight: 1.5,
+                              borderTop: '1px solid rgba(168,184,208,0.1)',
+                              paddingTop: '0.4rem'
+                            }}>
+                              Designed by human · Visual reference by ChatGPT
+                            </p>
+                          </div>
+                        )}
+
+                        {/* Text detail blocks — always in a nested grid */}
+                        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+                          <div className="char-detail-block">
+                            <h4>Personality</h4>
+                            <p>{char.personality}</p>
+                          </div>
+                          <div className="char-detail-block">
+                            <h4>Goals</h4>
+                            <p>{char.goals}</p>
+                          </div>
+                          <div className="char-detail-block">
+                            <h4>Fears</h4>
+                            <p>{char.fears}</p>
+                          </div>
+                          <div className="char-detail-block">
+                            <h4>Sample Dialogue</h4>
+                            <p className="char-dialogue">{char.dialogue}</p>
+                          </div>
+                        </div>
+
+                      </div>
                     </div>
                   </div>
-                </div>
-              </RevealSection>
-            ))}
-          </div>
-        </section>
+                </RevealSection>
+              ))}
+            </div>
+          </section>
+        )}
 
         <RunicDivider />
 
@@ -738,10 +869,18 @@ function App() {
           <RevealSection animation="reveal-fade-up">
             <Panel className="resume-box">
               <h2>Resume</h2>
-              <p>Download my full resume for a detailed breakdown of my education, technical skills, and narrative design experience.</p>
+              <p>{discipline === 'pm' 
+                ? "Download my Game Product Manager resume for a detailed breakdown of my metrics, F2P analysis, and engineering background."
+                : "Download my Narrative Design resume for a detailed breakdown of my quest design flows, worldbuilding, and creative publications."
+              }</p>
               <br />
-              <a href="#" className="btn btn-primary">
-                <Download size={16} style={{ marginRight: '8px' }} /> Download Resume
+              <a 
+                href={discipline === 'pm' ? "/Resume_Shree_Kamalesh_Scopely_PM.html" : "/Resume_Shree_Kamalesh_Quest_Designer.html"} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="btn btn-primary"
+              >
+                <Download size={16} style={{ marginRight: '8px' }} /> View &amp; Print Resume
               </a>
             </Panel>
           </RevealSection>
@@ -768,10 +907,16 @@ function App() {
           <div className="footer-content">
             <h3>Shree Kamalesh</h3>
             <p style={{ color: 'var(--text-main)', marginBottom: '0.5rem' }}>
-              Narrative Designer · Quest Designer · Game Writer
+              {discipline === 'pm' 
+                ? "Game Product Manager · Data Analyst · LiveOps Specialist"
+                : "Narrative Designer · Quest Designer · Game Writer"
+              }
             </p>
             <p style={{ fontSize: '0.9rem' }}>
-              Available for Narrative Design, Quest Design, and Interactive Storytelling opportunities.
+              {discipline === 'pm'
+                ? "Available for Product Management, LiveOps, and Game Analytics opportunities."
+                : "Available for Narrative Design, Quest Design, and Interactive Storytelling opportunities."
+              }
             </p>
           </div>
           <RunicDivider />
