@@ -684,38 +684,37 @@ function App() {
           </RevealSection>
         </div>
 
-        <RunicDivider />
+        {discipline === 'narrative' && (
+          <>
+            <RunicDivider />
 
-        {/* ── METRICS OUTPUT ───────────────────────── */}
-        <section id="experience" className="content-section">
-          <RevealSection animation="reveal-slash-in">
-            <h2 className="section-heading">{discipline === 'pm' ? "Product &amp; Data Metrics" : "Creative Output"}</h2>
-          </RevealSection>
-          <div className="metrics-grid stagger-grid">
-            {(discipline === 'pm' ? [
-              { tag: "A/B Testing Cohort", title: "Cookie Cats Experiment", number: "90,000+", unit: "Players", sub: "Statistical significance, sample power analysis, Welch's t-test, z-test." },
-              { tag: "Published Data Curation", title: "F1 Performance Dataset", number: "2,380+", unit: "Views", sub: "Published on Kaggle with 400+ downloads by data science community." },
-              { tag: "Product Performance", title: "Rise of the Exiled Bastard", number: "6,490+", unit: "Plays", sub: "Shipped game, user progression funnel mapping, variable design." },
-              { tag: "Data Engineering Pipeline", title: "Steam Analytics Database", number: "150,000+", unit: "Reviews", sub: "ETL script, DuckDB relational schema, Weak Supervision NLP labeling." },
-            ] : [
-              { tag: "Published Interactive Narrative", title: "Rise of the Exiled Bastard", number: "6,000+", unit: "Plays", sub: "Multiple Endings · Branching Storylines" },
-              { tag: "Long-form Fantasy Writing",       title: "LitRPG Web Serial",           number: "750,000+", unit: "Words", sub: "Character Progression Systems · Deep Worldbuilding" },
-              { tag: "RPG Quest Design",                title: "The Scenarist's Gambit",       sub: "Quest Design Documentation · Systemic Consequences" },
-              { tag: "Narrative Worldbuilding",         title: "Doctrine of Still Hands",      sub: "Faction philosophy · Political storytelling" },
-            ]).map((card, i) => (
-              <RevealSection key={i} animation="reveal-glow-in" delay={i * 120}>
-                <Panel className="metric-card">
-                  <div className="metric-tag">{card.tag}</div>
-                  <h3>{card.title}</h3>
-                  {card.number && (
-                    <div className="metric-number">{card.number}<span style={{ fontSize:'1rem', color:'var(--gold-dim)', marginLeft:'0.3em' }}>{card.unit}</span></div>
-                  )}
-                  <p>{card.sub}</p>
-                </Panel>
+            {/* ── METRICS OUTPUT ───────────────────────── */}
+            <section id="experience" className="content-section">
+              <RevealSection animation="reveal-slash-in">
+                <h2 className="section-heading">Creative Output</h2>
               </RevealSection>
-            ))}
-          </div>
-        </section>
+              <div className="metrics-grid stagger-grid">
+                {[
+                  { tag: "Published Interactive Narrative", title: "Rise of the Exiled Bastard", number: "6,000+", unit: "Plays", sub: "Multiple Endings · Branching Storylines" },
+                  { tag: "Long-form Fantasy Writing",       title: "LitRPG Web Serial",           number: "750,000+", unit: "Words", sub: "Character Progression Systems · Deep Worldbuilding" },
+                  { tag: "RPG Quest Design",                title: "The Scenarist's Gambit",       sub: "Quest Design Documentation · Systemic Consequences" },
+                  { tag: "Narrative Worldbuilding",         title: "Doctrine of Still Hands",      sub: "Faction philosophy · Political storytelling" },
+                ].map((card, i) => (
+                  <RevealSection key={i} animation="reveal-glow-in" delay={i * 120}>
+                    <Panel className="metric-card">
+                      <div className="metric-tag">{card.tag}</div>
+                      <h3>{card.title}</h3>
+                      {card.number && (
+                        <div className="metric-number">{card.number}<span style={{ fontSize:'1rem', color:'var(--gold-dim)', marginLeft:'0.3em' }}>{card.unit}</span></div>
+                      )}
+                      <p>{card.sub}</p>
+                    </Panel>
+                  </RevealSection>
+                ))}
+              </div>
+            </section>
+          </>
+        )}
 
         <RunicDivider />
 
