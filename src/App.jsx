@@ -410,7 +410,7 @@ function App() {
         </a>
         <div className="nav-links">
           <a href="#projects">Projects</a>
-          <a href="#experience">Metrics</a>
+          {discipline === 'narrative' && <a href="#experience">Metrics</a>}
           <a href="#philosophy">Skills &amp; Focus</a>
           {discipline === 'narrative' && <a href="#characters">Characters</a>}
           <a href="#contact">Contact</a>
